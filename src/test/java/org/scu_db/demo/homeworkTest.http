@@ -1,0 +1,22 @@
+//在此进行HTTP请求测试
+
+POST http://localhost:8080/example/1
+Content-Type: application/json
+
+{}
+
+###
+
+POST http://localhost:8080/example/2
+#Content-Type: application/json
+
+{}
+
+####
+
+POST http://localhost:8080/example/3
+Content-Type: application/json
+
+{}
+
+###
