@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  function tvClick() {
+      var x=document.getElementById("tv").value;
+      //window.location.href="http://localhost:8080/search?id="+x;
+       window.location.href="search?id="+x;
+  }
+</script>
+<body>
+<a th:href="@{/index}">回到主页</a>
+<div th:width="300px" th:height="50px">
+    <a th:href="@{/add(id=${null})}"> 添加新数据 </a>
+</div>
+
+
+<div th:width="300px" th:height="50px">
+    <input th:width="300px" th:height="50px" id="tv" th:value="${keyValue}">  </input>   <button id="btn" onclick="tvClick()">查询</button>
+</div>
+
+
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>版本</th>
+        <th>借阅者号码</th>
+        <th>截止日期</th>
+        <th>索引号</th>
+        <th>编辑</th>
+        <th>删除</th>
+    </tr>
+    <tr th:each="book:${books}">
+        <td><span th:text="${book.bookId}"></span></td>
+        <td><span th:text="${book.edition}"></span></td>
+        <td><span th:text="${book.borrowermemno}"></span></td>
+        <td><span th:text="${book.borrowduedate}"></span></td>
+        <td><span th:text="${book.callnumber}"></span></td>
+        <td><a th:href="@{/edit(id=${book.bookId})}"> edit </a></td>
+        <td><a th:href="@{/del(bookId=${book.bookId})}"> delete </a></td>
+    </tr>
+</table>
+
+</body>
+</html>

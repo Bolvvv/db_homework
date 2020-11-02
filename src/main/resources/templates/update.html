@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑客户</title>
+</head>
+<body>
+<a th:href="@{/index}">回到主页</a>
+<form th:action="@{/save(method=${1})}" method="post">
+
+    <div>
+        <label>图书编号</label>
+        <input type="text" name="id" readonly="readonly" th:field="${book.bookId}" />
+    </div>
+    <div>
+        <label>图书版本</label>
+        <input type="text" name="edition" th:field="${book.edition}" />
+    </div>
+    <div>
+        <label>借阅者号</label>
+        <input type="text" name="borrowermemno" th:field="${book.borrowermemno}" />
+    </div>
+    <div>
+        <label>归还日期</label>
+        <input type="text" name="borrowduedate" th:field="${book.borrowduedate}" />
+    </div>
+    <div>
+        <label>索引编号</label>
+        <input type="text" name="callnumber" th:field="${book.callnumber}" />
+    </div>
+    <div>
+        <input type="submit" value="提交" />
+    </div>
+</form>
+</body>
+</html>
