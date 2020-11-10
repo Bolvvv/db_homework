@@ -5,6 +5,6 @@ import org.scu_db.demo.model.Title;
 import java.util.List;
 
 public interface TitleService {
-
+    List<Title> findIliadOrOdysseyTitle();
 
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface TitleRepository extends JpaRepository<Title, String> {
 
-
+    @Query(value = "select * from title where name in ('Iliad', 'Odyssey');", nativeQuery = true)
+    List<Title> findIliadOrOdysseyTitle();
 
 }

@@ -32,10 +32,10 @@ public class HomeworkController {
 
         //------------在此之下写下执行代码--------------
 
-
+        bookId = bookService.findAllBorrowedBooksId();
 
         //-----------在此之上写下执行代码---------------
-        return null;//TODO:修改返回值为bookId
+        return bookId;//TODO:修改返回值为bookId
     }
 
     @RequestMapping("/2")
@@ -46,10 +46,10 @@ public class HomeworkController {
 
         //------------在此之下写下执行代码--------------
 
-
+        titles = titleService.findIliadOrOdysseyTitle();
 
         //-----------在此之上写下执行代码---------------
-        return null;//TODO:修改返回值为titles
+        return titles;//TODO:修改返回值为titles
     }
 
 
@@ -61,10 +61,10 @@ public class HomeworkController {
 
         //------------在此之下写下执行代码--------------
 
-
+        count = bookService.countCall123Book();
 
         //-----------在此之上写下执行代码---------------
-        return null;//TODO:修改返回值为books
+        return count;//TODO:修改返回值为books
     }
 
     @RequestMapping("/4")
@@ -74,9 +74,9 @@ public class HomeworkController {
         List<String> callnumbers;
         //------------在此之下写下执行代码--------------
 
-
+        callnumbers = bookService.findCountNotExceed2Callnumber();
         //-----------在此之上写下执行代码---------------
-        return null;//TODO:修改返回值为books
+        return callnumbers;//TODO:修改返回值为books
     }
 
 

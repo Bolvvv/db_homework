@@ -35,7 +35,6 @@ public class ThymeleafController {
         mav.addObject("books",bookService.findBookById(id));
         mav.addObject("keyValue",id);
         return mav;
-
     }
 
     //删除指定数据

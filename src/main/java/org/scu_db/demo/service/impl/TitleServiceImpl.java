@@ -13,5 +13,8 @@ public class TitleServiceImpl implements TitleService {
     @Autowired
     private TitleRepository titleRepository;
 
-
+    @Override
+    public List<Title> findIliadOrOdysseyTitle() {
+        return titleRepository.findIliadOrOdysseyTitle();
+    }
 }

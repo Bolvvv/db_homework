@@ -4,7 +4,6 @@ import org.scu_db.demo.Repository.BookRepository;
 import org.scu_db.demo.Repository.MemberRepository;
 import org.scu_db.demo.Repository.TitleRepository;
 import org.scu_db.demo.model.Book;
-import org.scu_db.demo.model.Title;
 import org.scu_db.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +59,20 @@ public class BookServiceImpl implements BookService {
         if(titleRepository.findById(book.getCallnumber()).isEmpty()){return 3;}
         bookRepository.saveAndFlush(book);
         return 0;
+    }
+
+    @Override
+    public List<Integer> findAllBorrowedBooksId() {
+        return bookRepository.findByBorrowermemno();
+    }
+
+    @Override
+    public Integer countCall123Book() {
+        return bookRepository.countBookByCallnumberEquals("Call123");
+    }
+
+    @Override
+    public List<String> findCountNotExceed2Callnumber() {
+        return bookRepository.findCountNotExceed2Callnumber();
     }
 }
